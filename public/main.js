@@ -43,4 +43,25 @@ if(chartContainer) {
     }]
   })
   chart.render()
+
+  Pusher.logToConsole = true
+
+  var pusher = new Pusher('a04876fd6f30e492290f', {
+    cluster: 'us2',
+    encrypted: true
+  })
+
+  var channel = pusher.subscribe('os-poll')
+  channel.bind('os-vote', data => {
+    dataPoints = dataPoints.map(x => {
+      if (x.label == data.os) {
+        x.y += data.points
+        return x
+      } else {
+        return x
+      }
+    })
+    chart.render()
+  })
 }
+

@@ -4,9 +4,9 @@ const router = express.Router()
 const Pusher = require('pusher')
 
 var pusher = new Pusher({
-  appId: '465033',
-  key: '0c6e1e724fc994c33998',
-  secret: '170e91139139db484d47',
+  appId: '869233',
+  key: 'a04876fd6f30e492290f',
+  secret: 'c4976c647bb23781f638',
   cluster: 'us2',
   encrypted: true
 })
