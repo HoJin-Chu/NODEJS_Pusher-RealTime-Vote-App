@@ -19,7 +19,6 @@ form.addEventListener('submit', (e) => {
   e.preventDefault()
 })
 
-
 let dataPoints = [
   { label: 'Windows', y: 0 },
   { label: 'MacOS', y: 0 },
