@@ -2,5 +2,5 @@
 
 ScreenShot <br>
 ----------
-![ChartIMG_column](./img/img1.png)
-![ChartIMG_pie](./img/img2.png)
+![ChartIMG_column](./img/img1.png){: width="50%" height="50%"}
+![ChartIMG_pie](./img/img2.png){: width="50%" height="50%"}
