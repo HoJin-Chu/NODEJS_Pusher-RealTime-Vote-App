@@ -1,4 +1,5 @@
 const form = document.getElementById('vote-form')
+let chart = []
 
 // Form Submit Event
 form.addEventListener('submit', (e) => {
@@ -22,6 +23,7 @@ form.addEventListener('submit', (e) => {
 fetch('http://localhost:3000/poll')
   .then(res => res.json())
   .then(data => {
+    const dddd = data
     const votes = data.votes
     const totalVotes = votes.length
     // Count vote points - acc/current
@@ -35,9 +37,9 @@ fetch('http://localhost:3000/poll')
     ]
     
     const chartContainer = document.querySelector('#chartContainer')
-    
+
     if(chartContainer) {
-      const chart = new CanvasJS.Chart('chartContainer', {
+      chart = new CanvasJS.Chart('chartContainer', {
         animationEnabled: true,
         exportEnabled: true,
         theme: 'theme1',
@@ -73,5 +75,15 @@ fetch('http://localhost:3000/poll')
     }
   })
 
-
+// Click method
+const change = {
+  chart() {
+    chart.options.data[0].type = 'column'
+    chart.render()
+  },
+  pie() {
+    chart.options.data[0].type = 'pie'
+    chart.render()
+  }
+}
 
